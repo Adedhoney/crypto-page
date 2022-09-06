@@ -25,10 +25,11 @@ function Main() {
         { value: "GH/s", label: "GH/s" },
         { value: "MH/s", label: "MH/s" },
     ]
+    // const observer = new IntersectionObserver()
     return (
         <main>
             <div className="flex_div">
-                <div className="fastest_secure_div">
+                <div className="fastest_secure_div grow_big">
                     <div className="black_friday">
                         <small>
                             <span>70% SAVE</span>
@@ -37,7 +38,7 @@ function Main() {
                     </div>
                     <h1>Fastest & Secure Platform To Invest In Crypto</h1>
                     <small className="almost_white">
-                        buy and sell cryptocurrencies by truted 10M wallets, in
+                        buy and sell cryptocurrencies by trusted 10M wallets, in
                         over 100m transactions
                     </small>
                     <div className="try_for_free">
@@ -49,7 +50,7 @@ function Main() {
                 </div>
             </div>
 
-            <div className="flex_div number_info_divs">
+            <div className="flex_div number_info_divs flex_div_3_items">
                 <div className="number_info_div">
                     <img src={_30b} alt="$30b" />
                     <div>
@@ -99,99 +100,110 @@ function Main() {
                     Porro, id similique temporibus dignissimos tempore odio?
                 </small>
             </div>
-            <div className="rate_calculation_div">
-                <div className="flex_div calculation_div">
-                    <input
-                        type="text"
-                        placeholder="Enter your hash rate"
-                        className="input_text"
-                    />
-                    <Select
-                        options={options}
-                        placeholder="TH/s"
-                        className="select"
-                    />
-                    <div className="calculate_button">Calculate</div>
+            <div className="rate_calculation_outerdiv">
+                <div className="rate_calculation_div">
+                    <div className="flex_div calculation_div">
+                        <input
+                            type="text"
+                            placeholder="Enter your hash rate"
+                            className="input_text"
+                        />
+                        <Select
+                            options={options}
+                            placeholder="TH/s"
+                            className="select"
+                        />
+                        <div className="calculate_button">Calculate</div>
+                    </div>
+                    <p className="blue">ESTIMATED 24 HOUR REVENUE:</p>
+                    <h1>
+                        0.055 130 59 ETH <span>($1275)</span>
+                    </h1>
+                    <p className="grey">
+                        Revenue will change based on mining difficulty and
+                        Ethereum price.
+                    </p>
                 </div>
-                <p className="blue">ESTIMATED 24 HOUR REVENUE:</p>
-                <h1>
-                    0.055 130 59 ETH <span>($1275)</span>
-                </h1>
-                <p className="grey">
-                    Revenue will change based on mining difficulty and Ethereum
-                    price.
-                </p>
             </div>
-            <div className="trade_securely">
-                <h2>
-                    Trade Securely And Market The High Growth Cryptocurrencies.
-                </h2>
-                <div className="flex_div crypto_divs">
-                    <div
-                        onClick={() => setActiveCoin(1)}
-                        className={`crypto_div ${
-                            activeCoin === 1 ? "active_coin" : ""
-                        }`}
-                    >
-                        <img src={bitcoinImage} alt="bitcoin logo" />
-                        <h2>Bitcoin </h2> <span>BTC</span>
-                        <p>
-                            Digital currency in which a record of transactions
-                            is maintained.
-                        </p>
-                        <div className="start_mining_div">
-                            {activeCoin === 1 && "Start Mining"}
-                            <img
-                                src={
-                                    activeCoin === 1 ? arrowRight : arrowRight1
-                                }
-                                alt=""
-                            />
+            <div className="trade_securely_outer_div">
+                <div className="trade_securely">
+                    <h2>
+                        Trade Securely And Market The High Growth
+                        Cryptocurrencies.
+                    </h2>
+                    <div className="flex_div crypto_divs flex_div_3_items">
+                        <div
+                            onClick={() => setActiveCoin(1)}
+                            className={`crypto_div ${
+                                activeCoin === 1 ? "active_coin" : ""
+                            }`}
+                        >
+                            <img src={bitcoinImage} alt="bitcoin logo" />
+                            <h2>Bitcoin </h2> <span>BTC</span>
+                            <p>
+                                Digital currency in which a record of
+                                transactions is maintained.
+                            </p>
+                            <div className="start_mining_div">
+                                {activeCoin === 1 && "Start Mining"}
+                                <img
+                                    src={
+                                        activeCoin === 1
+                                            ? arrowRight
+                                            : arrowRight1
+                                    }
+                                    alt=""
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div
-                        onClick={() => setActiveCoin(2)}
-                        className={`crypto_div ${
-                            activeCoin === 2 ? "active_coin" : ""
-                        }`}
-                    >
-                        <img src={ethereumImage} alt="ethereum logo" />
-                        <h2>Ethereum </h2> <span>ETH</span>
-                        <p>
-                            Blockchain technology to create and run
-                            decentralized digital applications.
-                        </p>
-                        <div className="start_mining_div">
-                            {activeCoin === 2 && "Start Mining"}
-                            <img
-                                src={
-                                    activeCoin === 2 ? arrowRight : arrowRight1
-                                }
-                                alt=""
-                            />
+                        <div
+                            onClick={() => setActiveCoin(2)}
+                            className={`crypto_div ${
+                                activeCoin === 2 ? "active_coin" : ""
+                            }`}
+                        >
+                            <img src={ethereumImage} alt="ethereum logo" />
+                            <h2>Ethereum </h2> <span>ETH</span>
+                            <p>
+                                Blockchain technology to create and run
+                                decentralized digital applications.
+                            </p>
+                            <div className="start_mining_div">
+                                {activeCoin === 2 && "Start Mining"}
+                                <img
+                                    src={
+                                        activeCoin === 2
+                                            ? arrowRight
+                                            : arrowRight1
+                                    }
+                                    alt=""
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div
-                        onClick={() => setActiveCoin(3)}
-                        className={`crypto_div ${
-                            activeCoin === 3 ? "active_coin" : ""
-                        }`}
-                    >
-                        <img src={litecoinImage} alt="litecoin logo" />
-                        <h2>Litecoin </h2>
-                        <span>LTC</span>
-                        <p>
-                            Cryptocurrency that enables instant payments to
-                            anyone in the world.
-                        </p>
-                        <div className="start_mining_div">
-                            {activeCoin === 3 && "Start Mining"}
-                            <img
-                                src={
-                                    activeCoin === 3 ? arrowRight : arrowRight1
-                                }
-                                alt=""
-                            />
+                        <div
+                            onClick={() => setActiveCoin(3)}
+                            className={`crypto_div ${
+                                activeCoin === 3 ? "active_coin" : ""
+                            }`}
+                        >
+                            <img src={litecoinImage} alt="litecoin logo" />
+                            <h2>Litecoin </h2>
+                            <span>LTC</span>
+                            <p>
+                                Cryptocurrency that enables instant payments to
+                                anyone in the world.
+                            </p>
+                            <div className="start_mining_div">
+                                {activeCoin === 3 && "Start Mining"}
+                                <img
+                                    src={
+                                        activeCoin === 3
+                                            ? arrowRight
+                                            : arrowRight1
+                                    }
+                                    alt=""
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
