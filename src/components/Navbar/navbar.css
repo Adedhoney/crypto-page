@@ -1,3 +1,12 @@
+@keyframes slideLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
 .navbar {
     display: flex;
     position: relative;
@@ -46,6 +55,8 @@
         height: 100%;
         background-color: rgb(47, 43, 95);
         z-index: 9;
+        animation-name: slideLeft;
+        animation-duration: 1s;
 
         font-size: 25px;
     }

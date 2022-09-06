@@ -1,6 +1,7 @@
 import React from "react"
 import Select from "react-select"
 import "./main.css"
+import TrackVisibility from "react-on-screen"
 
 import heroImage from "../../images/hero-img.png"
 import _30b from "../../images/$30b.png"
@@ -29,108 +30,179 @@ function Main() {
     return (
         <main>
             <div className="flex_div">
-                <div className="fastest_secure_div grow_big">
-                    <div className="black_friday">
-                        <small>
-                            <span>70% SAVE</span>
-                            for the best black friday deals
-                        </small>
-                    </div>
-                    <h1>Fastest & Secure Platform To Invest In Crypto</h1>
-                    <small className="almost_white">
-                        buy and sell cryptocurrencies by trusted 10M wallets, in
-                        over 100m transactions
-                    </small>
-                    <div className="try_for_free">
-                        Try For FREE <img src={arrowRight} alt="" />
-                    </div>
-                </div>
-                <div className="image_div">
-                    <img src={heroImage} alt="heroImage" />
-                </div>
+                <TrackVisibility partialVisibility>
+                    {({ isVisible }) => (
+                        <div
+                            className={`fastest_secure_div ${
+                                isVisible ? "slide_up" : "has_slide_up"
+                            }`}
+                        >
+                            <div className="black_friday">
+                                <small>
+                                    <span>70% SAVE</span>
+                                    for the best black friday deals
+                                </small>
+                            </div>
+                            <h1>
+                                Fastest & Secure Platform To Invest In Crypto
+                            </h1>
+                            <small className="almost_white">
+                                buy and sell cryptocurrencies by trusted 10M
+                                wallets, in over 100m transactions
+                            </small>
+                            <div className="try_for_free">
+                                Try For FREE <img src={arrowRight} alt="" />
+                            </div>
+                        </div>
+                    )}
+                </TrackVisibility>
+                <TrackVisibility partialVisibility>
+                    {({ isVisible }) => (
+                        <div
+                            className={`image_div ${
+                                isVisible ? "grow_big" : "has_grow_big"
+                            }`}
+                        >
+                            <img src={heroImage} alt="heroImage" />
+                        </div>
+                    )}
+                </TrackVisibility>
             </div>
 
-            <div className="flex_div number_info_divs flex_div_3_items">
-                <div className="number_info_div">
-                    <img src={_30b} alt="$30b" />
-                    <div>
-                        <h2>$30B</h2>
-                        <small className="almost_white">
-                            Digital Currency Exchange
-                        </small>
+            <TrackVisibility partialVisibility>
+                {({ isVisible }) => (
+                    <div
+                        className={`flex_div number_info_divs flex_div_3_items ${
+                            isVisible ? "slide_up" : "has_slide_up"
+                        }`}
+                    >
+                        <div className="number_info_div">
+                            <img src={_30b} alt="$30b" />
+                            <div>
+                                <h2>$30B</h2>
+                                <small className="almost_white">
+                                    Digital Currency Exchange
+                                </small>
+                            </div>
+                        </div>
+                        <div className="number_info_div">
+                            <img src={_195} alt="195+" />
+                            <div>
+                                <h2>190+</h2>
+                                <small className="almost_white">
+                                    Counties Around The World
+                                </small>
+                            </div>
+                        </div>
+                        <div className="number_info_div">
+                            <img src={_10m} alt="$10m" />
+                            <div>
+                                <h2>$10M</h2>
+                                <small className="almost_white">
+                                    Trusted Wallet Investors
+                                </small>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div className="number_info_div">
-                    <img src={_195} alt="195+" />
-                    <div>
-                        <h2>190+</h2>
-                        <small className="almost_white">
-                            Counties Around The World
-                        </small>
-                    </div>
-                </div>
-                <div className="number_info_div">
-                    <img src={_10m} alt="$10m" />
-                    <div>
-                        <h2>$10M</h2>
-                        <small className="almost_white">
-                            Trusted Wallet Investors
-                        </small>
-                    </div>
-                </div>
-            </div>
+                )}
+            </TrackVisibility>
             <div className="flex_div reverse">
-                <div className="image_div">
-                    <img src={whyImage} alt="whyImage" />
-                </div>
-                <div className="why_chappo">
-                    <h1>why you should choose CHAPPO</h1>
-                    <p className="almost_white">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Vero, laboriosam? Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. In, praesentium.
-                    </p>
-                    <div className="learn_more">learn more</div>
-                </div>
+                <TrackVisibility partialVisibility>
+                    {({ isVisible }) => (
+                        <div
+                            className={`image_div ${
+                                isVisible ? "grow_big" : "has_grow_big"
+                            }`}
+                        >
+                            <img src={whyImage} alt="whyImage" />
+                        </div>
+                    )}
+                </TrackVisibility>
+                <TrackVisibility partialVisibility>
+                    {({ isVisible }) => (
+                        <div
+                            className={`why_chappo ${
+                                isVisible ? "slide_up" : "has_slide_up"
+                            }`}
+                        >
+                            <h1>why you should choose CHAPPO</h1>
+                            <p className="almost_white">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Vero, laboriosam? Lorem ipsum
+                                dolor sit amet consectetur adipisicing elit. In,
+                                praesentium.
+                            </p>
+                            <div className="learn_more">learn more</div>
+                        </div>
+                    )}
+                </TrackVisibility>
             </div>
-            <div className="amount_to_earn">
-                <h2>How Much Can You Earn With Us</h2>
-                <small className="almost_white">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Porro, id similique temporibus dignissimos tempore odio?
-                </small>
-            </div>
-            <div className="rate_calculation_outerdiv">
-                <div className="rate_calculation_div">
-                    <div className="flex_div calculation_div">
-                        <input
-                            type="text"
-                            placeholder="Enter your hash rate"
-                            className="input_text"
-                        />
-                        <Select
-                            options={options}
-                            placeholder="TH/s"
-                            className="select"
-                        />
-                        <div className="calculate_button">Calculate</div>
+            <TrackVisibility partialVisibility>
+                {({ isVisible }) => (
+                    <div
+                        className={`amount_to_earn ${
+                            isVisible ? "slide_up" : "has_slide_up"
+                        }`}
+                    >
+                        <h2>How Much Can You Earn With Us</h2>
+                        <small className="almost_white">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Porro, id similique temporibus dignissimos
+                            tempore odio?
+                        </small>
                     </div>
-                    <p className="blue">ESTIMATED 24 HOUR REVENUE:</p>
-                    <h1>
-                        0.055 130 59 ETH <span>($1275)</span>
-                    </h1>
-                    <p className="grey">
-                        Revenue will change based on mining difficulty and
-                        Ethereum price.
-                    </p>
-                </div>
+                )}
+            </TrackVisibility>
+
+            <div className="rate_calculation_outerdiv">
+                <TrackVisibility partialVisibility>
+                    {({ isVisible }) => (
+                        <div
+                            className={`rate_calculation_div ${
+                                isVisible ? "grow_big" : "has_grow_big"
+                            }`}
+                        >
+                            <div className="flex_div calculation_div">
+                                <input
+                                    type="text"
+                                    placeholder="Enter your hash rate"
+                                    className="input_text"
+                                />
+                                <Select
+                                    options={options}
+                                    placeholder="TH/s"
+                                    className="select"
+                                />
+                                <div className="calculate_button">
+                                    Calculate
+                                </div>
+                            </div>
+                            <p className="blue">ESTIMATED 24 HOUR REVENUE:</p>
+                            <h1>
+                                0.055 130 59 ETH <span>($1275)</span>
+                            </h1>
+                            <p className="grey">
+                                Revenue will change based on mining difficulty
+                                and Ethereum price.
+                            </p>
+                        </div>
+                    )}
+                </TrackVisibility>
             </div>
             <div className="trade_securely_outer_div">
                 <div className="trade_securely">
-                    <h2>
-                        Trade Securely And Market The High Growth
-                        Cryptocurrencies.
-                    </h2>
+                    <TrackVisibility partialVisibility>
+                        {({ isVisible }) => (
+                            <h2
+                                className={` ${
+                                    isVisible ? "grow_big" : "has_grow_big"
+                                }`}
+                            >
+                                Trade Securely And Market The High Growth
+                                Cryptocurrencies.
+                            </h2>
+                        )}
+                    </TrackVisibility>
                     <div className="flex_div crypto_divs flex_div_3_items">
                         <div
                             onClick={() => setActiveCoin(1)}
@@ -208,77 +280,141 @@ function Main() {
                     </div>
                 </div>
             </div>
-            <h1 className="market_sentiments">
-                Market Sentiments, Portfolio, And Run The Infrastructure Of Your
-                Choice
-            </h1>
+            <TrackVisibility partialVisibility>
+                {({ isVisible }) => (
+                    <h1
+                        className={`market_sentiments ${
+                            isVisible ? "grow_big" : "has_grow_big"
+                        }`}
+                    >
+                        Market Sentiments, Portfolio, And Run The Infrastructure
+                        Of Your Choice
+                    </h1>
+                )}
+            </TrackVisibility>
             <div className="flex_div">
-                <div>
-                    <h2>Invest Smart</h2>
-                    <small className="almost_white">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Aspernatur rem ducimus vitae maiores dolorum
-                        alias.
-                    </small>
-                    <div className="learn_more">
-                        <small>learn more</small>
-                    </div>
-                </div>
-                <div className="image_div">
-                    <img src={featureImage1} alt="feature image" />
-                </div>
+                <TrackVisibility partialVisibility>
+                    {({ isVisible }) => (
+                        <div
+                            className={`${
+                                isVisible ? "slide_up" : "has_slide_up"
+                            }`}
+                        >
+                            <h2>Invest Smart</h2>
+                            <small className="almost_white">
+                                Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Aspernatur rem ducimus vitae
+                                maiores dolorum alias.
+                            </small>
+                            <div className="learn_more">
+                                <small>learn more</small>
+                            </div>
+                        </div>
+                    )}
+                </TrackVisibility>
+                <TrackVisibility partialVisibility>
+                    {({ isVisible }) => (
+                        <div
+                            className={`image_div ${
+                                isVisible ? "grow_big" : "has_grow_big"
+                            }`}
+                        >
+                            <img src={featureImage1} alt="feature image" />
+                        </div>
+                    )}
+                </TrackVisibility>
             </div>
             <div className="flex_div reverse">
-                <div className="image_div">
-                    <img src={featureImage2} alt="feature image" />
-                </div>
-                <div>
-                    <h2>Detailed Statistics</h2>
-                    <small className="almost_white">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Aspernatur rem ducimus vitae maiores dolorum
-                        alias.
-                    </small>
-                    <div className="learn_more">
-                        <small>learn more</small>
-                    </div>
-                </div>
+                <TrackVisibility partialVisibility>
+                    {({ isVisible }) => (
+                        <div
+                            className={`image_div ${
+                                isVisible ? "grow_big" : "has_grow_big"
+                            }`}
+                        >
+                            <img src={featureImage2} alt="feature image" />
+                        </div>
+                    )}
+                </TrackVisibility>
+                <TrackVisibility partialVisibility>
+                    {({ isVisible }) => (
+                        <div
+                            className={`${
+                                isVisible ? "slide_up" : "has_slide_up"
+                            }`}
+                        >
+                            <h2>Detailed Statistics</h2>
+                            <small className="almost_white">
+                                Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Aspernatur rem ducimus vitae
+                                maiores dolorum alias.
+                            </small>
+                            <div className="learn_more">
+                                <small>learn more</small>
+                            </div>
+                        </div>
+                    )}
+                </TrackVisibility>
             </div>
             <div className="flex_div">
-                <div>
-                    <h2>Grow Your Profit And Track Your Investments</h2>
-                    <small className="almost_white">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Aspernatur rem ducimus vitae maiores dolorum
-                        alias.
-                    </small>
-                    <div className="learn_more">
-                        <small>learn more</small>
+                <TrackVisibility partialVisibility>
+                    {({ isVisible }) => (
+                        <div
+                            className={` ${
+                                isVisible ? "slide_up" : "has_slide_up"
+                            }`}
+                        >
+                            <h2>Grow Your Profit And Track Your Investments</h2>
+                            <small className="almost_white">
+                                Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Aspernatur rem ducimus vitae
+                                maiores dolorum alias.
+                            </small>
+                            <div className="learn_more">
+                                <small>learn more</small>
+                            </div>
+                        </div>
+                    )}
+                </TrackVisibility>
+                <TrackVisibility partialVisibility>
+                    {({ isVisible }) => (
+                        <div
+                            className={`image_div  ${
+                                isVisible ? "grow_big" : "has_grow_big"
+                            }`}
+                        >
+                            <img src={featureImage3} alt="feature image" />
+                        </div>
+                    )}
+                </TrackVisibility>
+            </div>
+            <TrackVisibility partialVisibility>
+                {({ isVisible }) => (
+                    <div
+                        className={`start_mining_now_div flex_div ${
+                            isVisible ? "grow_big" : "has_grow_big"
+                        }`}
+                    >
+                        <div className="flex_column">
+                            <h2>Start Mining Now</h2>
+                            <small>
+                                Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Iste, ipsum.
+                            </small>
+                            <small>
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Ad, saepe
+                            </small>
+                        </div>
+                        <input
+                            type="text"
+                            placeholder="enter message"
+                            className="input_text"
+                        />
+                        <div className="subscribe_div">Subscribe</div>
                     </div>
-                </div>
-                <div className="image_div">
-                    <img src={featureImage3} alt="feature image" />
-                </div>
-            </div>
-            <div className="start_mining_now_div flex_div">
-                <div className="flex_column">
-                    <h2>Start Mining Now</h2>
-                    <small>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Iste, ipsum.
-                    </small>
-                    <small>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Ad, saepe
-                    </small>
-                </div>
-                <input
-                    type="text"
-                    placeholder="enter message"
-                    className="input_text"
-                />
-                <div className="subscribe_div">Subscribe</div>
-            </div>
+                )}
+            </TrackVisibility>
         </main>
     )
 }
