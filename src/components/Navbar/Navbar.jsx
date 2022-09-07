@@ -3,12 +3,11 @@ import "./navbar.css"
 import crappoLogo from "../../images/logo.svg"
 import menu from "../../images/menu.svg"
 import cancel from "../../images/cancel.svg"
-import { motion } from "framer-motion"
 import { useMediaQuery } from "react-responsive"
 
 function Navbar() {
     const isSmallScreen = useMediaQuery({ query: "(max-width: 1000px)" })
-    const [showOptions, setShowOpotions] = React.useState(false)
+    const [showOptions, setShowOpotions] = React.useState(true)
 
     function toggleOptions() {
         if (isSmallScreen) {
@@ -28,11 +27,7 @@ function Navbar() {
                 </div>
             )}
             {showOptions && (
-                <div
-                    // animate={{ x: 1 }}
-                    transition={{ delay: 0 }}
-                    className="nav_options"
-                >
+                <div className="nav_options">
                     {isSmallScreen && (
                         <div onClick={toggleOptions} className="cancel_button">
                             <img src={cancel} alt="" />
