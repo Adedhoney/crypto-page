@@ -134,7 +134,7 @@ main {
     padding: 35px 40px;
     border-radius: 20px;
     color: black;
-    z-index: 9;
+    z-index: 8;
     width: 80%;
     max-width: 800px;
     margin: auto;
@@ -316,7 +316,7 @@ main {
         padding: 20px;
     }
     .rate_calculation_outerdiv {
-        height: 170px;
+        height: 200px;
     }
     .start_mining_now_div small {
         width: fit-content;
