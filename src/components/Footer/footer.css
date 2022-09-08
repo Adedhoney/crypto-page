@@ -64,3 +64,15 @@
         align-items: center;
     }
 }
+
+@media (max-width: 355px) {
+    .payment_options_images {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    .payment_options_div p {
+        white-space: normal;
+    }
+}

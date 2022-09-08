@@ -321,4 +321,17 @@ main {
     .start_mining_now_div small {
         width: fit-content;
     }
+    .black_friday span {
+        margin-right: 15px;
+        padding: 4px 10px;
+    }
+}
+
+@media (max-width: 365px) {
+    .rate_calculation_outerdiv {
+        height: 260px;
+    }
+    .black_friday {
+        font-size: 12px;
+    }
 }
