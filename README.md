@@ -1,2 +1,2 @@
 # Crypto Page
-live site at https://app.netlify.com/sites/ade-dhoney-crypto-site
+live site at https://ade-dhoney-crypto-site.netlify.app/
